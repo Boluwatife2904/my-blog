@@ -1,4 +1,5 @@
 import { ref } from "vue";
+import { projectFirestore } from "../firebase/config"
 
 const getPosts = () => {
   const isLoading = ref(false);
@@ -8,15 +9,10 @@ const getPosts = () => {
   const loadData = async () => {
     isLoading.value = true;
     try {
-      const response = await fetch("http://localhost:3000/posts");
-      const responseData = await response.json();
-      if (!response.ok) {
-        const error = new Error(
-          responseData.message || "Failed to load posts."
-        );
-        throw error;
-      }
-      posts.value = responseData;
+      const response = await projectFirestore.collection("posts").get();
+      posts.value = response.docs.map(doc => {
+        return {...doc.data(), id: doc.id}
+      })
       setTimeout(() => {
         isLoading.value = false;
       }, 500)
