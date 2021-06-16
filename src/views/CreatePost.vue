@@ -52,6 +52,7 @@
 <script>
 import { ref, reactive } from "vue";
 import { useRouter } from "vue-router";
+import { projectFirestore } from "../firebase/config";
 export default {
   name: "CreatePost",
   setup() {
@@ -105,16 +106,10 @@ export default {
       if (formIsInvalid.value) {
         return;
       }
-      await fetch("http://localhost:3000/posts", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          title: title.value,
-          body: body.value,
-          tags: tags.value,
-        }),
+      await projectFirestore.collection("posts").add({
+        title: title.value,
+        body: body.value,
+        tags: tags.value,
       });
       resetForm();
       router.replace("/");
