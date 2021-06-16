@@ -1,0 +1,16 @@
+{
+  "posts" : [
+    {
+      "title": "welcome to the blog",
+      "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt corrupti consectetur consequatur expedita sed ratione velit est quaerat ipsum undeaperiam excepturi ducimus, asperiores eius vero? Repellat eos ad adipisciincidunt. Provident, accusantium illum? Facilis quas et ullam. Amet perspiciatis velit, neque accusamus reiciendis cupiditate beatae, quidem nulla ipsa ipsum quam quisquam eum iure magni optio, ullam pariatur repellendus quos facilis culpa! Illo, odit? Ipsam est nesciunt sed quia! Omnis architecto minus harum, minima est quae, explicabo quam eius nihil dignissimos enim culpa fugiat recusandae ipsum dolor exercitationem soluta quidem rem. Quasi perferendis animi, doloremque illum cumque maxime optio sint",
+      "id": 1,
+      "tags" : ["webdev", "coding", "news"]
+    },
+    {
+      "title": "Our First Blog Post",
+      "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt corrupti consectetur consequatur expedita sed ratione velit est quaerat ipsum undeaperiam excepturi ducimus, asperiores eius vero? Repellat eos ad adipisciincidunt. Provident, accusantium illum? Facilis quas et ullam. Amet perspiciatis velit, neque accusamus reiciendis cupiditate beatae, quidem nulla ipsa ipsum quam quisquam eum iure magni optio, ullam pariatur repellendus quos facilis culpa! Illo, odit? Ipsam est nesciunt sed quia! Omnis architecto minus harum, minima est quae, explicabo quam eius nihil dignissimos enim culpa fugiat recusandae ipsum dolor exercitationem soluta quidem rem. Quasi perferendis animi, doloremque illum cumque maxime optio sint",
+      "id": 2,
+      "tags" : ["css", "webdev", "coding"]
+    }
+  ]
+}

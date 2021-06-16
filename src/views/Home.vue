@@ -1,11 +1,26 @@
 <template>
   <div class="home">
-
+    <h1>Home</h1>
+    <Spinner v-if="isLoading"/>
+    <div v-else-if="!isLoading && posts.length === 0">No posts found....</div>
+    <PostList :posts="posts" v-else-if="!isLoading && posts.length > 0"/>
+    <div v-else>{{ error }}</div>
   </div>
 </template>
 
 <script>
+import PostList from "../components/PostList.vue";
+import Spinner from '../components/Spinner.vue';
+import getPosts from "../composables/getPosts"
 export default {
-  name: 'Home',
-}
+  components: { PostList, Spinner },
+  name: "Home",
+  setup() {
+    const { isLoading, error, posts, loadData } = getPosts();
+
+    loadData();
+
+    return { posts, error, isLoading };
+  },
+};
 </script>
