@@ -1,7 +1,5 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
-    <router-link to="/create">Create New Post</router-link>
     <Spinner v-if="isLoading"/>
     <div v-else-if="!isLoading && posts.length === 0">No posts found....</div>
     <PostList :posts="posts" v-else-if="!isLoading && posts.length > 0"/>

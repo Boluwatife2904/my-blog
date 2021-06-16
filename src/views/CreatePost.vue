@@ -51,6 +51,7 @@
 
 <script>
 import { ref, reactive } from "vue";
+import { useRouter } from "vue-router";
 export default {
   name: "CreatePost",
   setup() {
@@ -59,6 +60,7 @@ export default {
     const tag = ref("");
     const tags = reactive({ value: [], valid: true, message: "" });
     const formIsInvalid = ref(false);
+    const router = useRouter();
 
     const handleTagInput = () => {
       if (!tags.value.includes(tag.value.toLowerCase())) {
@@ -115,6 +117,7 @@ export default {
         })
       })
       resetForm();
+      router.replace("/")
     };
 
     const resetInput = (input) => {
