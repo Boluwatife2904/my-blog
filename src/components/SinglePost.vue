@@ -26,4 +26,9 @@ export default {
 </script>
 
 <style>
+.post {
+  margin: 0 40px 30px 0;
+  padding-bottom: 30px;
+  border-bottom: 1px dashed #b8b8b8;
+}
 </style>

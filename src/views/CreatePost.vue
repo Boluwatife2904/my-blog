@@ -98,13 +98,22 @@ export default {
       tags.value = [];
     };
 
-    const submitForm = () => {
+    const submitForm = async () => {
       validateForm();
       if (formIsInvalid.value) {
         return;
       }
-      alert("Valid");
-      console.log(title.value, body.value, tags.value);
+      await fetch("http://localhost:3000/posts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          title: title.value,
+          body: body.value,
+          tags: tags.value
+        })
+      })
       resetForm();
     };
 
@@ -126,7 +135,17 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.create {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+h2 {
+  text-align: center;
+}
+
 .create-form {
   max-width: 520px;
   width: 95%;

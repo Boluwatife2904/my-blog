@@ -19,7 +19,7 @@ const getSinglePost = (id) => {
       post.value = responseData;
       setTimeout(() => {
         isLoading.value = false;
-      }, 2000)
+      }, 500)
     } catch (err) {
       isLoading.value = false;
       error.value = err.message;

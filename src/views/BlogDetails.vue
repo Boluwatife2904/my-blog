@@ -1,26 +1,27 @@
 <template>
-  <h1>Blog Details for {{ id }}</h1>
-  <Spinner v-if="isLoading" />
-  <div v-else-if="!isLoading && post" class="post">
-    <h3>{{ post.title }}</h3>
-    <p class="pre">{{ post.body }}</p>
-    <span v-for="tag in post.tags" :key="tag">#{{ tag }}</span>
+  <div class="post">
+    <Spinner v-if="isLoading" />
+    <div v-else-if="!isLoading && post">
+      <h3>{{ post.title }}</h3>
+      <p class="pre">{{ post.body }}</p>
+      <span v-for="tag in post.tags" :key="tag">#{{ tag }}</span>
+    </div>
+    <div>{{ error }}</div>
   </div>
-  <div>{{ error }} </div>
 </template>
 
 <script>
-import Spinner from '../components/Spinner.vue';
-import getSinglePost from "../composables/getSinglePost"
+import Spinner from "../components/Spinner.vue";
+import getSinglePost from "../composables/getSinglePost";
 export default {
   components: { Spinner },
   props: ["id"],
   setup(props) {
     const { post, error, isLoading, loadData } = getSinglePost(props.id);
-    loadData()
-    return { post, error, isLoading }
-  }
-}
+    loadData();
+    return { post, error, isLoading };
+  },
+};
 </script>
 
 <style>
