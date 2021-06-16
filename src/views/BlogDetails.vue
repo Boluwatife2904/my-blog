@@ -4,9 +4,9 @@
     <div v-else-if="!isLoading && post">
       <h3>{{ post.title }}</h3>
       <p class="pre">{{ post.body }}</p>
-      <span v-for="tag in post.tags" :key="tag">#{{ tag }}</span>
+      <span v-for="tag in post.tags" :key="tag" class="tag-item">#{{ tag }}</span>
     </div>
-    <div>{{ error }}</div>
+    <div v-else>{{ error }}</div>
   </div>
 </template>
 

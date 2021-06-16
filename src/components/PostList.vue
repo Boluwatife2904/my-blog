@@ -1,19 +1,16 @@
 <template>
   <div class="post-list">
-    <div v-for="post in posts" :key="post.id">
-      <SinglePost :post="post" />
-    </div>
+    <SinglePost :post="post" v-for="post in posts" :key="post.id" />
   </div>
 </template>
 
 <script>
-import SinglePost from './SinglePost.vue'
+import SinglePost from "./SinglePost.vue";
 export default {
   components: { SinglePost },
-  props: ["posts"]
-}
+  props: ["posts"],
+};
 </script>
 
 <style>
-
 </style>

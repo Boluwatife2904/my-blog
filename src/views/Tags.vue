@@ -1,10 +1,14 @@
 <template>
   <div class="tags">
-    <h1>Tags Page</h1>
     <Spinner v-if="isLoading" />
-    <div v-else-if="!isLoading && filteredPostsWithTags.length === 0">We couldn't find any posts matching the selected tag....</div>
-    <PostList v-else-if="!isLoading && filteredPostsWithTags.length > 0" :posts="filteredPostsWithTags" />
-    <div v-else> {{ error }}</div>
+    <div v-else-if="!isLoading && filteredPostsWithTags.length === 0">
+      We couldn't find any posts matching the selected tag....
+    </div>
+    <div class="layout" v-else-if="!isLoading && filteredPostsWithTags.length > 0">
+      <PostList :posts="filteredPostsWithTags" />
+      <TagCloud :posts="posts" />
+    </div>
+    <div v-else>{{ error }}</div>
   </div>
 </template>
 
@@ -12,25 +16,26 @@
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import getPosts from "../composables/getPosts";
-import Spinner from '../components/Spinner.vue';
-import PostList from '../components/PostList.vue';
+import Spinner from "../components/Spinner.vue";
+import PostList from "../components/PostList.vue";
+import TagCloud from '../components/TagCloud.vue';
 export default {
-  components: { Spinner, PostList },
+  components: { Spinner, PostList, TagCloud },
   name: "Tags",
   props: ["tag"],
   setup() {
-    const route = useRoute()
+    const route = useRoute();
     const { posts, error, isLoading, loadData } = getPosts();
 
     loadData();
 
     const filteredPostsWithTags = computed(() => {
-      return posts.value.filter(post => post.tags.includes(route.params.tag))
-    })
+      return posts.value.filter((post) => post.tags.includes(route.params.tag));
+    });
 
-    return { isLoading, error, filteredPostsWithTags }
-  }
-}
+    return { posts, isLoading, error, filteredPostsWithTags };
+  },
+};
 </script>
 
 <style>
