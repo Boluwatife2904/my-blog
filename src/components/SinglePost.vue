@@ -17,7 +17,7 @@ export default {
       return props.post.body.substring(0, 100) + "...";
     });
     const blogLink = computed(() => {
-      return { name: "BlogDetails", params: { id : props.post.id } };
+      return { name: "BlogDetails", params: { id: props.post.id,  slug : props.post.slug } };
     });
 
     return { body, blogLink };

@@ -1,43 +1,26 @@
 {
   "posts": [
     {
-      "title": "New Blog Post",
-      "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt corrupti consectetur consequatur expedita sed ratione velit est quaerat ipsum undeaperiam excepturi ducimus, asperiores eius vero? Repellat eos ad adipisciincidunt. Provident, accusantium illum? Facilis quas et ullam. Amet perspiciatis velit, neque accusamus reiciendis cupiditate beatae, quidem nulla ipsa ipsum quam quisquam eum iure magni optio, ullam pariatur repellendus quos facilis culpa! Illo, odit? Ipsam est nesciunt sed quia! Omnis architecto minus harum, minima est quae, explicabo quam eius nihil dignissimos enim culpa fugiat recusandae ipsum dolor exercitationem soluta quidem rem. Quasi perferendis animi, doloremque illum cumque maxime optio sint",
+      "title": "First Blog Post",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium impedit ea omnis inventore odit id eaque molestias iusto cum, blanditiis quae, veniam hic? Voluptates et delectus minima maxime earum. Atque.",
       "tags": [
-        "new",
+        "first",
         "blog",
         "post"
       ],
+      "slug": "first-blog-post",
       "id": 1
     },
     {
-      "title": "Totally new blog post",
-      "body": "Body of the blog post",
-      "tags": [
-        "body",
-        "post"
-      ],
-      "id": 2
-    },
-    {
-      "title": "First Blog Post",
-      "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt corrupti consectetur consequatur expedita sed ratione velit est quaerat ipsum undeaperiam excepturi ducimus, asperiores eius vero? Repellat eos ad adipisciincidunt. Provident, accusantium illum? Facilis quas et ullam. Amet perspiciatis velit, neque accusamus reiciendis cupiditate beatae, quidem nulla ipsa ipsum quam quisquam eum iure magni optio, ullam pariatur repellendus quos facilis culpa! Illo, odit? Ipsam est nesciunt sed quia! Omnis architecto minus harum, minima est quae, explicabo quam eius nihil dignissimos enim culpa fugiat recusandae ipsum dolor exercitationem soluta quidem rem. Quasi perferendis animi, doloremque illum cumque maxime optio sint",
-      "tags": [
-        "blog",
-        "first",
-        "post"
-      ],
-      "id": 3
-    },
-    {
       "title": "Another Blog Post",
-      "body": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt corrupti consectetur consequatur expedita sed ratione velit est quaerat ipsum undeaperiam excepturi ducimus, asperiores eius vero? Repellat eos ad adipisciincidunt. Provident, accusantium illum? Facilis quas et ullam. Amet perspiciatis velit, neque accusamus reiciendis cupiditate beatae, quidem nulla ipsa ipsum quam quisquam eum iure magni optio, ullam pariatur repellendus quos facilis culpa! Illo, odit? Ipsam est nesciunt sed quia! Omnis architecto minus harum, minima est quae, explicabo quam eius nihil dignissimos enim culpa fugiat recusandae ipsum dolor exercitationem soluta quidem rem. Quasi perferendis animi, doloremque illum cumque maxime optio sint",
+      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium impedit ea omnis inventore odit id eaque molestias iusto cum, blanditiis quae, veniam hic? Voluptates et delectus minima maxime earum. Atque.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium impedit ea omnis inventore odit id eaque molestias iusto cum, blanditiis quae, veniam hic? Voluptates et delectus minima maxime earum. Atque.",
       "tags": [
         "another",
         "blog",
         "post"
       ],
-      "id": 4
+      "slug": "another-blog-post",
+      "id": 2
     }
   ]
 }

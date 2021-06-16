@@ -100,6 +100,12 @@ export default {
       tags.value = [];
     };
 
+    function convertToSlug(title) {
+      return title.toLowerCase()
+        .replace(/ /g, "-")
+        .replace(/[^\w-]+/g, "");
+    }
+
     const submitForm = async () => {
       validateForm();
       if (formIsInvalid.value) {
@@ -108,16 +114,17 @@ export default {
       await fetch("http://localhost:3000/posts", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           title: title.value,
           body: body.value,
-          tags: tags.value
-        })
-      })
+          tags: tags.value,
+          slug: convertToSlug(title.value),
+        }),
+      });
       resetForm();
-      router.replace("/")
+      router.replace("/");
     };
 
     const resetInput = (input) => {
