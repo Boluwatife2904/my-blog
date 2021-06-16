@@ -15,7 +15,7 @@ import Spinner from "../components/Spinner.vue";
 import getSinglePost from "../composables/getSinglePost";
 export default {
   components: { Spinner },
-  props: ["id", "slug"],
+  props: ["id"],
   setup(props) {
     const { post, error, isLoading, loadData } = getSinglePost(props.id);
     loadData();

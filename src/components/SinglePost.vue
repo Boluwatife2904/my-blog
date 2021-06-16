@@ -23,7 +23,7 @@ export default {
     const blogLink = computed(() => {
       return {
         name: "BlogDetails",
-        params: { id: props.post.id, slug: props.post.slug },
+        params: { id: props.post.id },
       };
     });
 

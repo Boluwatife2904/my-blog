@@ -8,7 +8,6 @@
         "blog",
         "post"
       ],
-      "slug": "first-blog-post",
       "id": 1
     },
     {
@@ -19,7 +18,6 @@
         "blog",
         "post"
       ],
-      "slug": "another-blog-post",
       "id": 2
     },
     {
@@ -38,7 +36,6 @@
         "vue-router",
         "nuxt"
       ],
-      "slug": "welcome-to-my-blog",
       "id": 3
     }
   ]

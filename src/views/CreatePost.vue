@@ -100,12 +100,6 @@ export default {
       tags.value = [];
     };
 
-    function convertToSlug(title) {
-      return title.toLowerCase()
-        .replace(/ /g, "-")
-        .replace(/[^\w-]+/g, "");
-    }
-
     const submitForm = async () => {
       validateForm();
       if (formIsInvalid.value) {
@@ -120,7 +114,6 @@ export default {
           title: title.value,
           body: body.value,
           tags: tags.value,
-          slug: convertToSlug(title.value),
         }),
       });
       resetForm();
