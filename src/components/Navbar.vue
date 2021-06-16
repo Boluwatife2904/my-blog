@@ -52,7 +52,7 @@ nav ul li a {
   color: #bbb;
   text-decoration: none;
   margin-left: 20px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 nav ul li a.router-link-active {
