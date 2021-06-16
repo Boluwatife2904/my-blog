@@ -17,7 +17,13 @@ const routes = [
     path: "/create",
     name: "CreatePost",
     component: () => import("../views/CreatePost.vue")
-  }
+  },
+  {
+    path: "/tags/:tag",
+    name: "Tags",
+    component: () => import("../views/Tags.vue"),
+    props: true
+  },
 ]
 
 const router = createRouter({

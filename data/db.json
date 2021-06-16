@@ -21,6 +21,25 @@
       ],
       "slug": "another-blog-post",
       "id": 2
+    },
+    {
+      "title": "Welcome to my blog",
+      "body": "This blog post is just an introductory post to what to expect from me as regards the posts I will be delivering on here. Thanks.",
+      "tags": [
+        "welcome",
+        "blog",
+        "post",
+        "vue",
+        "css",
+        "tailwind",
+        "bootstrap",
+        "javascript",
+        "vuex",
+        "vue-router",
+        "nuxt"
+      ],
+      "slug": "welcome-to-my-blog",
+      "id": 3
     }
   ]
 }
