@@ -44,7 +44,10 @@
         </div>
         <small v-if="!tags.valid" class="error">{{ tags.message }}</small>
       </div>
-      <input type="submit" value="Create Blog Post" />
+      <button class="submit-button" type="submit">
+        <i class="bx bx-loader bx-spin bx-flip-horizontal" v-if="actionInProgress"></i>
+        <span v-else>Create Post</span>
+      </button>
     </form>
   </div>
 </template>
@@ -61,6 +64,7 @@ export default {
     const tag = ref("");
     const tags = reactive({ value: [], valid: true, message: "" });
     const formIsInvalid = ref(false);
+    const actionInProgress = ref(false);
     const router = useRouter();
 
     const handleTagInput = () => {
@@ -106,12 +110,14 @@ export default {
       if (formIsInvalid.value) {
         return;
       }
+      actionInProgress.value = true;
       await projectFirestore.collection("posts").add({
         title: title.value,
         body: body.value,
         tags: tags.value,
       });
       resetForm();
+      actionInProgress.value = false;
       router.replace("/");
     };
 
@@ -124,6 +130,7 @@ export default {
       body,
       tag,
       tags,
+      actionInProgress,
       handleTagInput,
       removeTag,
       submitForm,
@@ -185,7 +192,7 @@ h2 {
   outline: none;
 }
 
-.create-form input[type="submit"] {
+.create-form .submit-button {
   border: none;
   outline: none;
   background-color: #ff8800;
@@ -195,10 +202,7 @@ h2 {
   font: inherit;
   cursor: pointer;
   transition: all 0.3s linear;
-}
-
-.create-form input[type="submit"]:hover {
-  background-color: #663399;
+  width: 180px;
 }
 
 .tag {

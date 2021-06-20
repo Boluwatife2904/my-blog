@@ -133,4 +133,10 @@ export default {
 .modal-content .modal-actions button:last-child {
   background: rgb(255, 79, 114);
 }
+
+.modal-content .modal-actions button:disabled {
+  cursor: not-allowed;
+  background: rgb(240, 240, 240);
+  color: grey;
+}
 </style>
