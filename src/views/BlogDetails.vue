@@ -1,5 +1,5 @@
 <template>
-  <div class="post">
+  <div class="post-body">
     <DeleteModal 
       @toggle-modal="toggleDeleteModal" 
       @delete-post="deleteBlogPost" 
@@ -13,7 +13,7 @@
       <span v-for="tag in post.tags" :key="tag" class="tag-item">#{{ tag }}</span>
       <button class="delete" @click="toggleDeleteModal">Delete Post</button>
     </div>
-    <div v-else>{{ error }}</div>
+    <div v-else>{{ error || "We couldn't fetch the blog details now" }}</div>
   </div>
 </template>
 
@@ -44,7 +44,6 @@ export default {
       await projectFirestore.collection("posts").doc(props.id).delete();
       actionInProgress.value = false;
       router.replace({ name: "Home"})
-      console.log("Blog Post Deleted Successfully!!!")
     }
 
     return { post, error, isLoading, showModal, toggleDeleteModal, deleteBlogPost, actionInProgress };
@@ -53,18 +52,18 @@ export default {
 </script>
 
 <style>
-.post {
+.post-body {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.post p {
+.post-body p {
   color: #444;
   line-height: 1.5em;
   margin-top: 40px;
 }
 
-.post .pre {
+.post-body .pre {
   white-space: pre-wrap;
 }
 

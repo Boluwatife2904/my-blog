@@ -9,7 +9,9 @@ const getPosts = () => {
   const loadData = async () => {
     isLoading.value = true;
     try {
-      const response = await projectFirestore.collection("posts").get();
+      const response = await projectFirestore.collection("posts")
+        .orderBy("createdAt")
+        .get();
       posts.value = response.docs.map(doc => {
         return {...doc.data(), id: doc.id}
       })

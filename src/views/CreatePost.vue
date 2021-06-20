@@ -55,7 +55,7 @@
 <script>
 import { ref, reactive } from "vue";
 import { useRouter } from "vue-router";
-import { projectFirestore } from "../firebase/config";
+import { projectFirestore, timestamp } from "../firebase/config";
 export default {
   name: "CreatePost",
   setup() {
@@ -115,6 +115,7 @@ export default {
         title: title.value,
         body: body.value,
         tags: tags.value,
+        createdAt: timestamp()
       });
       resetForm();
       actionInProgress.value = false;
